@@ -1,0 +1,13 @@
+<div class="flex flex-col">
+  <%= form_with model: @channel do |f| %>
+    <div>
+      <%= f.text_field :name, class: 'border rounded-md' %>
+    </div>
+    <div>
+      <%= f.text_area :description, class: 'border rounded-md' %>
+    </div>
+    <div>
+      <%= f.submit 'Update Channel', class: 'rounded-lg px-4 md:px-5 xl:px-4 py-3 md:py-4 xl:py-3 bg-teal-500 hover:bg-teal-600 md:text-lg xl:text-base text-white font-semibold leading-tight shadow-md' %>
+    </div>
+  <% end %>
+</div>
