@@ -1,4 +1,4 @@
-class ControlPanel::Channels::SuspensionsController < ApplicationController
+class ControlPanel::Channels::SuspensionsController < ControlPanel::BaseController
   before_action :set_channel
 
   def create
