@@ -8,6 +8,7 @@ Rails.application.routes.draw do
     end
   end
 
+  resources :sites, only: [:create]
   resources :channels, only: [:show, :edit, :update]
 
   root 'static#home_page'
