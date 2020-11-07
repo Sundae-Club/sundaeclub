@@ -8,6 +8,10 @@ Rails.application.routes.draw do
     end
   end
 
+  namespace :sites_setup, path: 'sites/:site_id/welcome' do
+    resource :details, only: [:edit], path: 'your-site'
+  end
+
   resources :sites, only: [:create]
   resources :channels, only: [:show, :edit, :update]
 
