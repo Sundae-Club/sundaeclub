@@ -1,5 +1,5 @@
 class ControlPanel::ChannelPolicy < ApplicationPolicy
   def show?
-    user.present?
+    user.organisation == record.organisation
   end
 end
