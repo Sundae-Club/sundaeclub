@@ -1,0 +1,22 @@
+<h1>
+  Add your user details
+</h1>
+
+<%= form_for(User.new, url: sites_setup_users_path) do |f| %>
+  <%= render "devise/shared/error_messages", resource: @user if @user %>
+
+  <div class="field">
+    <%= f.label :email %><br />
+    <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+  </div>
+
+  <div class="field">
+    <%= f.label :password %>
+    <br />
+    <%= f.password_field :password, autocomplete: "new-password" %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit "Sign up" %>
+  </div>
+<% end %>
