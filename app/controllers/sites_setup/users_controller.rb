@@ -8,8 +8,8 @@ class SitesSetup::UsersController < SitesSetup::BaseController
 
   def create
     @user = User.new(user_params)
+    @user.organisation = @site.organisation
     if @user.save
-      @site.update(organisation: @user.organisation)
       flash[:notice] = "Your user account has been created!"
       redirect_to root_path
     else
