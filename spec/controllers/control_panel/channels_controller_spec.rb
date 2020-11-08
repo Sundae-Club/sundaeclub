@@ -3,12 +3,11 @@
 require 'rails_helper'
 
 describe ControlPanel::ChannelsController, type: :controller do
-  let(:channel) { FactoryBot.create(:channel) }
-
   context '#show' do
     context 'with a confirmed, signed-in user that belongs to the same organisation as the channel' do
       let(:user) { FactoryBot.create(:user, :confirmed) }
-      let(:channel) { FactoryBot.create(:channel, organisation: user.organisation) }
+      let!(:site) { FactoryBot.create(:site, organisation: user.organisation) }
+      let(:channel) { FactoryBot.create(:channel, site: site) }
 
       before { sign_in user }
 
