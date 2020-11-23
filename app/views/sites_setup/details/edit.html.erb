@@ -1,7 +1,26 @@
-<h1>
-  This is Step 2!
-</h1>
-<p>
- This is where the form will go to update the Site model!
-</p>
-<%= link_to 'Skip to Step 3', new_sites_setup_users_path %>
+<div class="mt-12">
+  <div class="max-w-lg p-3 mx-auto bg-white shadow sm:rounded-lg">
+    <p>
+      This is where the form will go to update the Site model!
+    </p>
+
+    <div class="grid grid-cols-3 gap-6">
+      <div class="col-span-3">
+        <label for="company_website" class="block text-sm font-medium text-gray-700">
+          What's the URL of your channel?
+        </label>
+        <div class="mt-1 flex rounded-md shadow-sm">
+          <span class="inline-flex items-center px-3 rounded-l-md border border-r-0 border-gray-300 bg-gray-50 text-gray-500 text-sm">
+            http://www.youtube.com/
+          </span>
+          <input type="text"
+                 id="company_website"
+                 class="focus:ring-indigo-500 focus:border-indigo-500 flex-1 block w-full rounded-none rounded-r-md sm:text-sm border-gray-300"
+                 placeholder="channels/123">
+        </div>
+      </div>
+    </div>
+
+    <%= link_to 'Skip to Step 3', new_sites_setup_users_path %>
+  </div>
+</div>
