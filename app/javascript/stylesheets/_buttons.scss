@@ -1,0 +1,5 @@
+@layer base {
+  .btn {
+    @apply rounded-lg px-2 py-2 bg-red-400 hover:bg-red-500 md:text-lg xl:text-base text-white font-semibold leading-tight shadow-md;
+  }
+}
