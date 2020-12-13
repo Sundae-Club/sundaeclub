@@ -30,6 +30,7 @@ gem 'bootsnap', '>= 1.4.2', require: false
 gem "devise", "~> 4.7"
 gem "pundit"
 gem "view_component", require: "view_component/engine"
+gem 'yt'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
