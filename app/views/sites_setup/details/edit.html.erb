@@ -4,26 +4,27 @@
       This is where the form will go to update the Site model!
     </p>
 
-    <div class="grid grid-cols-3 gap-6 mb-8">
-      <div class="col-span-3">
-        <label for="company_website" class="block text-sm font-medium text-gray-700">
-          What's the URL of your channel?
-        </label>
-        <div class="mt-1 flex rounded-md shadow-sm">
-          <span class="inline-flex items-center px-3 rounded-l-md border border-r-0 border-gray-300 bg-gray-50 text-gray-500 text-sm">
-            http://www.youtube.com/
-          </span>
-          <input type="text"
-                 id="company_website"
-                 class="focus:ring-indigo-500 focus:border-indigo-500 flex-1 block w-full rounded-none rounded-r-md sm:text-sm border-gray-300"
-                 placeholder="channels/123">
+    <%= form_with model: @channel, url: sites_setup_details_path, method: :patch do |f| %>
+      <div class="grid grid-cols-3 gap-6 mb-8">
+        <div class="col-span-3">
+          <label for="company_website" class="block text-sm font-medium text-gray-700">
+            What's the ID of your YouTube Channel?
+          </label>
+          <div class="mt-1 flex rounded-md shadow-sm">
+            <span class="inline-flex items-center px-3 rounded-l-md border border-r-0 border-gray-300 bg-gray-50 text-gray-500 text-sm">
+              http://www.youtube.com/channel/
+            </span>
+            <%= f.text_field :youtube_channel_id,
+                             class: 'focus:ring-indigo-500 focus:border-indigo-500 '\
+                                    'flex-1 block w-full rounded-none rounded-r-md '\
+                                    'sm:text-sm border-gray-300' %>
+          </div>
         </div>
       </div>
-    </div>
-    <div class="text-center mx-auto mb-8">
-      <%= link_to 'Submit', new_sites_setup_users_path, class: 'btn' %>
-    </div>
-
+      <div class="text-center mx-auto mb-8">
+        <%= f.submit 'Submit', class: 'btn' %>
+      </div>
+    <% end %>
     <%= link_to 'Skip to Step 3', new_sites_setup_users_path %>
   </div>
 </div>

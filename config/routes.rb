@@ -9,7 +9,7 @@ Rails.application.routes.draw do
   end
 
   namespace :sites_setup, path: 'sites/:site_id/welcome' do
-    resource :details, only: [:edit], path: 'your-site'
+    resource :details, only: [:edit, :update], path: 'your-site'
     resource :users, only: [:new, :create], path: 'account'
   end
 
