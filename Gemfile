@@ -31,6 +31,7 @@ gem "devise", "~> 4.7"
 gem "pundit"
 gem "view_component", require: "view_component/engine"
 gem 'yt'
+gem 'delayed_job_active_record'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
