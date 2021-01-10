@@ -1,6 +1,8 @@
 # frozen_string_literal: true
 
 class SitesController < ApplicationController
+  before_action :set_site, only: :show
+
   def create
     @site = Site.new(site_params)
     @organisation = @site.build_organisation(name: 'TestOrg')
@@ -12,7 +14,14 @@ class SitesController < ApplicationController
     end
   end
 
+  def show
+  end
+
   private
+
+  def set_site
+    @site = Site.find(params[:id])
+  end
 
   def site_params
     params.require(:site).permit(:name)

@@ -14,4 +14,21 @@ describe SitesController, type: :controller do
       end
     end
   end
+
+  context '#show' do
+    context 'with a valid site' do
+      let(:site) { FactoryBot.create(:site) }
+
+      context 'as a non-logged-in visitor' do
+        let(:show_action) do
+          get :show, params: { id: site.id }
+        end
+
+        it 'should return a success response' do
+          show_action
+          expect(response).to have_http_status(:ok)
+        end
+      end
+    end
+  end
 end

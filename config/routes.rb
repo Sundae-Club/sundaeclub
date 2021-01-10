@@ -13,7 +13,7 @@ Rails.application.routes.draw do
     resource :users, only: [:new, :create], path: 'account'
   end
 
-  resources :sites, only: [:create]
+  resources :sites, only: [:create, :show]
   resources :channels, only: [:show, :edit, :update]
 
   root 'static#home_page'

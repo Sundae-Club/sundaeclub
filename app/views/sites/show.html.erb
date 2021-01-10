@@ -1,0 +1,23 @@
+<h1 class="text-lg font-bold">
+  <%= @site.name %>
+</h1>
+<p>
+  <%= @site.description %>
+</p>
+
+<% @site.channels.each do |channel| %>
+  YouTube
+  <% channel.videos.each do |video| %>
+    <div>
+      <img src="<%= video.thumbnail_url %>" style="max-width: 250px">
+      <br>
+      <div class="text-lg font-bold">
+        <%= video.title %>
+      </div>
+      <p>
+        <%= video.description %>
+      </p>
+    </div>
+  <% end %>
+
+<% end %>
