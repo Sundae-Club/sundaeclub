@@ -3,6 +3,6 @@ FactoryBot.define do
     name "MyText"
     description "MyText"
     slug "MyText"
-    organisation
+    site
   end
 end
