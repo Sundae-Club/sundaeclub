@@ -2,10 +2,28 @@
   <h1 class="text-lg font-bold">
     <%= @channel.name %>
   </h1>
-
   <h4>
     Organisation: <%= @channel.site.organisation.name %>
   </h4>
   <%= link_to 'Edit Channel', edit_channel_path(@channel), class: 'text-blue-500' %>
+
+  <% if @channel.videos.empty? %>
+    <div class="text-lg font-bold">
+      There are no videos for this channel (yet!).
+    </div>
+  <% else %>
+    <% @channel.videos.each do |video| %>
+      <div>
+        <img src="<%= video.thumbnail_url %>" style="max-width: 250px">
+        <br>
+        <div class="text-lg font-bold">
+          <%= video.title %>
+        </div>
+        <p>
+          <%= video.description %>
+        </p>
+      </div>
+    <% end %>
+  <% end %>
 </div>
 
