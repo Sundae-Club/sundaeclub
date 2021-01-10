@@ -4,10 +4,23 @@
 <h3>
   <%= @channel.name %>
 </h3>
+
+<% if @videos.empty? %>
+  <div class="text-lg font-bold">
+    There are no videos for this channel (yet!).
+  </div>
+<% else %>
+  <% @videos.each do |video| %>
+    <%= render video %>
+  <% end %>
+<% end %>
+
+
+
 <% if @channel.suspended_at.present? %>
   SUSPENDED
 <% else %>
   VALID
 <% end %>
 
-<%= button_to 'Suspend', control_panel_channel_suspension_path(@channel), method: :post, class: 'rounded-lg px-4 md:px-5 xl:px-4 py-3 md:py-4 xl:py-3 bg-teal-500 hover:bg-teal-600 md:text-lg xl:text-base text-white font-semibold leading-tight shadow-md' %>
+<%= button_to 'Suspend', control_panel_channel_suspension_path(@channel), method: :post, class: 'btn' %>

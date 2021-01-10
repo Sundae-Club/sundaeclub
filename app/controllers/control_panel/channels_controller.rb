@@ -3,6 +3,7 @@ class ControlPanel::ChannelsController < ControlPanel::BaseController
 
   def show
     authorize @channel
+    @videos = @channel.videos.order("updated_at desc")
   end
 
   private
