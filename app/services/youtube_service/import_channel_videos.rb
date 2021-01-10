@@ -14,7 +14,7 @@ class YoutubeService::ImportChannelVideos
   def import_videos
     youtube_channel = Yt::Channel.new(id: @channel.youtube_channel_id)
     youtube_channel.videos.each do |youtube_video|
-      next if Video.where(external_id: youtube_video.id).any?
+      next if Video.where(channel_id: @channel.id, external_id: youtube_video.id).any?
 
       @channel.videos.create!(
         external_id: youtube_video.id,
