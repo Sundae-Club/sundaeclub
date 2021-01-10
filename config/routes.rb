@@ -6,6 +6,7 @@ Rails.application.routes.draw do
     resources :channels, only: :show do
       resource :suspension, only: :create, module: :channels
     end
+    resources :videos, only: [:edit, :update]
   end
 
   namespace :sites_setup, path: 'sites/:site_id/welcome' do

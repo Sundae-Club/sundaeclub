@@ -1,0 +1,13 @@
+<div class="flex flex-col">
+  <%= form_with model: [:control_panel, @video] do |f| %>
+    <div>
+      <%= f.text_field :title, class: 'border rounded-md' %>
+    </div>
+    <div>
+      <%= f.text_area :description, class: 'border rounded-md' %>
+    </div>
+    <div>
+      <%= f.submit 'Update Video', class: 'btn' %>
+    </div>
+  <% end %>
+</div>
