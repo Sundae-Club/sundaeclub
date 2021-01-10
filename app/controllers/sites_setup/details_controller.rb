@@ -9,6 +9,7 @@ class SitesSetup::DetailsController < SitesSetup::BaseController
     @channel = Channel.new(site: @site)
     @channel.assign_attributes(channel_params)
     if @channel.save
+      PopulateChannelVideosJob.set(wait: 30.seconds).perform_later(channel: @channel)
       redirect_to new_sites_setup_users_path(@site)
     else
       render :edit
