@@ -8,6 +8,8 @@
 
     <%= javascript_pack_tag 'application' %>
     <%= stylesheet_pack_tag 'application', media: 'all' %>
+    <%= yield :head %>
+    <%= turbo_include_tags %>
 </head>
 
   <body class="bg-gray-50">

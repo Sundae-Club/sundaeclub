@@ -220,6 +220,8 @@ GEM
     thor (1.0.1)
     thread_safe (0.3.6)
     tilt (2.0.10)
+    turbo-rails (0.5.1)
+      rails (>= 6.0.0)
     tzinfo (1.2.8)
       thread_safe (~> 0.1)
     view_component (2.22.1)
@@ -272,6 +274,7 @@ DEPENDENCIES
   shoulda-matchers
   spring
   spring-watcher-listen (~> 2.0.0)
+  turbo-rails
   view_component
   web-console (>= 3.3.0)
   webdrivers
