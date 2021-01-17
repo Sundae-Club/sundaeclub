@@ -169,6 +169,7 @@ GEM
     rb-fsevent (0.10.4)
     rb-inotify (0.10.1)
       ffi (~> 1.0)
+    redis (4.2.5)
     regexp_parser (1.7.1)
     responders (3.0.1)
       actionpack (>= 5.0)
@@ -217,6 +218,8 @@ GEM
       actionpack (>= 4.0)
       activesupport (>= 4.0)
       sprockets (>= 3.0.0)
+    stimulus-rails (0.1.4)
+      rails (>= 6.0.0)
     thor (1.0.1)
     thread_safe (0.3.6)
     tilt (2.0.10)
@@ -268,12 +271,14 @@ DEPENDENCIES
   pundit
   rails (~> 6.0.3, >= 6.0.3.2)
   rails-controller-testing
+  redis (~> 4.0)
   rspec-rails
   sass-rails (>= 6)
   selenium-webdriver
   shoulda-matchers
   spring
   spring-watcher-listen (~> 2.0.0)
+  stimulus-rails
   turbo-rails
   view_component
   web-console (>= 3.3.0)
