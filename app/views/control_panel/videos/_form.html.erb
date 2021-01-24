@@ -1,13 +1,16 @@
-<div class="flex flex-col">
-  <%= form_with model: [:control_panel, @video] do |f| %>
-    <div>
-      <%= f.text_field :title, class: 'border rounded-md' %>
-    </div>
-    <div>
-      <%= f.text_area :description, class: 'border rounded-md' %>
-    </div>
-    <div>
-      <%= f.submit 'Update Video', class: 'btn' %>
-    </div>
-  <% end %>
-</div>
+<turbo-frame id="<%= dom_id(@video) %>">
+  <div class="flex flex-col">
+    <%= form_with model: [:control_panel, @video] do |f| %>
+      <div>
+        <%= f.text_field :title, class: 'border rounded-md' %>
+      </div>
+      <div>
+        <%= f.text_area :description, class: 'border rounded-md' %>
+      </div>
+      <div>
+        <%= f.submit 'Update Video', class: 'btn' %>
+      </div>
+      <%= link_to 'Cancel', control_panel_channel_path(@video.channel) %>
+    <% end %>
+  </div>
+</turbo-frame>

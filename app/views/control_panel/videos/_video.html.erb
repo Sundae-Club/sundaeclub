@@ -1,13 +1,15 @@
-<div>
-  <img src="<%= video.thumbnail_url %>" style="max-width: 250px">
-  <br>
-  <div class="text-lg font-bold">
-    <%= video.title %>
+<turbo-frame id="<%= dom_id(video) %>">
+  <div>
+    <img src="<%= video.thumbnail_url %>" style="max-width: 250px">
+    <br>
+    <div class="text-lg font-bold">
+      <%= video.title %>
+    </div>
+    <p>
+      <%= video.description %>
+    </p>
   </div>
-  <p>
-    <%= video.description %>
-  </p>
-</div>
-<div>
-  <%= link_to 'Edit', edit_control_panel_video_path(video), class: 'btn' %>
-</div>
+  <div>
+    <%= link_to 'Edit', edit_control_panel_video_path(video), class: 'btn' %>
+  </div>
+</turbo-frame>
