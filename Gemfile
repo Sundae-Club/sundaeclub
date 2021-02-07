@@ -33,6 +33,7 @@ gem 'yt'
 gem 'delayed_job_active_record'
 gem 'turbo-rails'
 gem 'stimulus-rails'
+gem 'paper_trail'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console

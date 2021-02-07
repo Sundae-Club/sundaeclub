@@ -121,6 +121,9 @@ GEM
     nokogiri (1.10.10)
       mini_portile2 (~> 2.4.0)
     orm_adapter (0.5.0)
+    paper_trail (11.1.0)
+      activerecord (>= 5.2)
+      request_store (~> 1.1)
     pg (1.2.3)
     pry (0.13.1)
       coderay (~> 1.1)
@@ -171,6 +174,8 @@ GEM
       ffi (~> 1.0)
     redis (4.2.5)
     regexp_parser (1.7.1)
+    request_store (1.5.0)
+      rack (>= 1.4)
     responders (3.0.1)
       actionpack (>= 5.0)
       railties (>= 5.0)
@@ -265,6 +270,7 @@ DEPENDENCIES
   factory_bot_rails
   jbuilder (~> 2.7)
   listen (~> 3.2)
+  paper_trail
   pg (>= 0.18, < 2.0)
   pry
   puma (~> 4.1)
