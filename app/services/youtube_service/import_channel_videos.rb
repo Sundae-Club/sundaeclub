@@ -16,10 +16,12 @@ class YoutubeService::ImportChannelVideos
     youtube_channel.videos.each do |youtube_video|
       next if Video.where(channel_id: @channel.id, external_id: youtube_video.id).any?
 
+      video = Yt::Video.new(id: youtube_video.id)
+
       @channel.videos.create!(
         external_id: youtube_video.id,
         title: youtube_video.title,
-        description: youtube_video.description,
+        description: video.description,
         thumbnail_url: youtube_video.thumbnail_url
       )
     end
