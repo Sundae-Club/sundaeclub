@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_02_07_112240) do
+ActiveRecord::Schema.define(version: 2021_02_14_115312) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -40,6 +40,16 @@ ActiveRecord::Schema.define(version: 2021_02_07_112240) do
     t.datetime "created_at", precision: 6
     t.datetime "updated_at", precision: 6
     t.index ["priority", "run_at"], name: "delayed_jobs_priority"
+  end
+
+  create_table "notification_subscriptions", force: :cascade do |t|
+    t.bigint "user_id", null: false
+    t.text "event_name"
+    t.string "subscribeable_type", null: false
+    t.bigint "subscribeable_id", null: false
+    t.boolean "active"
+    t.index ["subscribeable_type", "subscribeable_id"], name: "index_notification_subscriptions_on_subscribeable"
+    t.index ["user_id"], name: "index_notification_subscriptions_on_user_id"
   end
 
   create_table "organisations", force: :cascade do |t|
@@ -106,6 +116,7 @@ ActiveRecord::Schema.define(version: 2021_02_07_112240) do
   end
 
   add_foreign_key "channels", "sites"
+  add_foreign_key "notification_subscriptions", "users"
   add_foreign_key "sites", "organisations"
   add_foreign_key "users", "organisations"
   add_foreign_key "videos", "channels"
