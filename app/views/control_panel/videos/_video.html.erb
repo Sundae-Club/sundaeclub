@@ -3,7 +3,7 @@
     <img src="<%= video.thumbnail_url %>" style="max-width: 250px">
     <br>
     <div class="text-lg font-bold">
-      <%= video.title %>
+      <%= link_to video.title, control_panel_video_path(video), target: '_top' %>
     </div>
     <p>
       <%= video.description %>
