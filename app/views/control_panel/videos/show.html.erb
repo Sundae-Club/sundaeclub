@@ -1,0 +1,9 @@
+Showing Video #<%= @video.id %>
+<div>
+  Versions:
+  <% @video.versions.each do |version| %>
+    <div>
+      <%= version.object %><%= link_to 'Restore', '#', class: 'btn' %>
+    </div>
+  <% end %>
+</div>

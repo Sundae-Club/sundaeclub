@@ -1,6 +1,9 @@
 class ControlPanel::VideosController < ControlPanel::BaseController
   before_action :set_video
 
+  def show
+  end
+
   def edit
   end
 
