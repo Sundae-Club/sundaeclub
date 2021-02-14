@@ -2,11 +2,13 @@ Rails.application.routes.draw do
   devise_for :users
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 
+  match 'pubsubhubbub/post', to: 'youtube_webhook_verifications#create', via: [:get, :post]
+
   namespace :control_panel, path: 'controlpanel' do
     resources :channels, only: :show do
       resource :suspension, only: :create, module: :channels
     end
-    resources :videos, only: [:edit, :update]
+    resources :videos, only: [:show, :edit, :update]
   end
 
   namespace :sites_setup, path: 'sites/:site_id/welcome' do
