@@ -5,6 +5,6 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable,
          :confirmable, :trackable
   belongs_to :organisation
-
+  has_many :notification_subscriptions
   validates :organisation, presence: true
 end
