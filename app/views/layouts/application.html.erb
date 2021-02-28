@@ -11,9 +11,19 @@
     <%= yield :head %>
     <%= turbo_include_tags %>
     <%= stimulus_include_tags %>
-</head>
+  </head>
 
   <body class="bg-gray-50">
+    <div class="h-2 bg-white shadow">
+      <div class="container">
+        <% if current_user %>
+          <%= current_user.email %>
+        <% else %>
+          <%= link_to 'Sign In', new_session_path(:user) %>
+        <% end %>
+      </div>
+    </div>
+
     <% flash.each do |type, msg| %>
       <div>
         <%= msg %>
