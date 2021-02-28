@@ -11,6 +11,7 @@ class SitesSetup::UsersController < SitesSetup::BaseController
     @user.organisation = @site.organisation
     if @user.save
       flash[:notice] = "Your user account has been created!"
+      sign_in @user
       redirect_to site_path(@site)
     else
       render :new
