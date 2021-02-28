@@ -6,6 +6,14 @@
     Organisation: <%= @channel.site.organisation.name %>
   </h4>
   <%= link_to 'Edit Channel', edit_channel_path(@channel), class: 'text-blue-500' %>
+  <% if NotificationSubscription.user_has_active_subscription_for?(user: current_user, subscribeable: @channel) %>
+    <div>
+      You're Subscribed 🤩
+      <%= button_to "Unubscribe", notification_subscriptions_path(subscribeable_id: @channel.id, subscribeable_type: @channel.class.name), method: :delete, class: 'btn' %>
+    </div>
+  <% else %>
+    <%= button_to "Subscribe", notification_subscriptions_path(subscribeable_id: @channel.id, subscribeable_type: @channel.class.name), method: :post, class: 'btn' %>
+  <% end %>
 
   <% if @channel.videos.empty? %>
     <div class="text-lg font-bold">

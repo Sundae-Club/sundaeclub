@@ -18,6 +18,8 @@ Rails.application.routes.draw do
 
   resources :sites, only: [:create, :show]
   resources :channels, only: [:show, :edit, :update]
+  resources :notification_subscriptions, only: [:create]
+  delete :notification_subscriptions, to: 'notification_subscriptions#destroy'
 
   root 'static#home_page'
 end
