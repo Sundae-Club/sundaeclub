@@ -1,5 +1,5 @@
 Sundae Club Home Page
-<%= form_with model: Site.new do |f| %>
+<%= form_with model: Site.new, data: { turbo: false, remote: false } do |f| %>
   <%= f.text_field :name, class: 'border rounded-md' %>
   <%= f.submit 'Create Site', class: 'rounded-lg px-4 md:px-5 xl:px-4 py-3 md:py-4 xl:py-3 bg-red-400 hover:bg-red-500 md:text-lg xl:text-base text-white font-semibold leading-tight shadow-md' %>
 <% end %>
