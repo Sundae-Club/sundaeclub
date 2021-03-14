@@ -6,5 +6,6 @@ class User < ApplicationRecord
          :confirmable, :trackable
   belongs_to :organisation
   has_many :notification_subscriptions
+  has_many :notifications, as: :recipient
   validates :organisation, presence: true
 end
